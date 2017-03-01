@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.dc.testdrawing.MainActivity">
+
+
+
+    <com.example.dc.testdrawing.MyView
+        android:id="@+id/draw"
+        android:background="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <ToggleButton
+        android:id="@+id/Fingers"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/background_cursor"
+        android:textOn=""
+        android:textOff=""/>
+    <ToggleButton
+        android:id="@+id/Drag"
+        android:layout_below="@id/Fingers"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/background_drag"
+        android:textOn=""
+        android:textOff=""/>
+    <ToggleButton
+        android:id="@+id/Pipette"
+        android:layout_below="@id/Drag"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:background="@drawable/background_pipette"
+        android:textOn=""
+        android:textOff=""/>
+
+
+    <SeekBar
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/zoom"
+        android:visibility="gone"/>
+
+    <ScrollView
+        android:id="@+id/HSCROLL"
+        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_margin="5dp"
+            android:orientation="vertical"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content">
+            <View
+                android:id="@+id/add"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/add"></View>
+            <com.example.dc.testdrawing.Colors
+                android:id="@+id/COL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            </com.example.dc.testdrawing.Colors>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <SeekBar
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/Fingers"
+        android:id="@+id/strokewidth"
+        android:layout_toLeftOf="@+id/HSCROLL"/>
+
+
+</RelativeLayout>
